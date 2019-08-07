@@ -33,10 +33,10 @@ To install locally, clone this repository, `cd` into the directory and run:
 1.  Create an account at [Swiftype](https://swiftype.com/) and get your API key from your [Account Settings](https://app.swiftype.com/settings/account).
 
 2.  Configure your client:
-    
+
         from swiftype import swiftype
         client = swiftype.Client(api_key='YOUR_API_KEY')
-    
+
 
 3.  Create an `Engine` named e.g. `youtube`:
 
@@ -361,6 +361,6 @@ We welcome contributors to the project. Before you begin, a couple notes...
 
 ## License 📗
 
-[MIT](https://github.com/swiftype/swiftype-py/blob/master/LICENSE) © [Elastic](https://github.com/elastic)
+[Apache 2.0](https://github.com/elastic/site-search-php/blob/master/LICENSE) © [Elastic](https://github.com/elastic)
 
-Thank you to all the [contributors](https://github.com/swiftype/swiftype-py/graphs/contributors)!
+Thank you to all the [contributors](https://github.com/elastic/site-search-php/graphs/contributors)!
