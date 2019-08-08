@@ -1,4 +1,4 @@
-from swiftype import swiftype
+from elastic_site_search import Client
 import os
 import time
 import unittest2 as unittest
@@ -14,7 +14,7 @@ class TestClientFunctions(unittest.TestCase):
         except:
             api_key = "a-test-api-key"
 
-        self.client = swiftype.Client(api_key=api_key, host='localhost:3000')
+        self.client = Client(api_key=api_key, host='localhost:3000')
         self.engine = 'api-test'
         self.document_type = 'books'
 
@@ -291,7 +291,7 @@ class TestClientFunctions(unittest.TestCase):
 class TestClientUsernameAndPassword(unittest.TestCase):
 
     def setUp(self):
-        self.client = swiftype.Client(
+        self.client = Client(
             username='some_user',
             password='some_pasword',
             host='localhost:3000'
@@ -314,7 +314,7 @@ class TestPlatformUsers(unittest.TestCase):
 
         client_id = '3e4fd842fc99aecb4dc50e5b88a186c1e206ddd516cdd336da3622c4afd7e2e9'
         client_secret = '4441879b5e2a9c3271f5b1a4bc223b715f091e5ed20fe75d1352e1290c7a6dfb'
-        self.client = swiftype.Client(api_key=api_key, client_id=client_id, client_secret=client_secret, host='localhost:3000')
+        self.client = Client(api_key=api_key, client_id=client_id, client_secret=client_secret, host='localhost:3000')
 
     def test_users(self):
         with vcr.use_cassette('fixtures/users.yaml'):
@@ -365,7 +365,7 @@ class TestPlatformResources(unittest.TestCase):
         access_token = '6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e'
         self.engine = 'myusersengine'
         self.document_type = 'videos'
-        self.client = swiftype.Client(access_token=access_token, host='localhost:3000')
+        self.client = Client(access_token=access_token, host='localhost:3000')
 
     def test_platform_engine_create(self):
         with vcr.use_cassette('fixtures/platform_engine_create.yaml'):

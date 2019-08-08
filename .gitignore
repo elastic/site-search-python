@@ -1,7 +1,9 @@
 /build
 /dist
-/swiftype.egg-info
 *.egg
 *.py[cod]
 .DS_Store
 .python-version
+*.egg-info/
+.tox/*
+.eggs/*

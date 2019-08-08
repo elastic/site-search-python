@@ -4,7 +4,8 @@ interactions:
     headers:
       Authorization: [Bearer 6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e]
       Content-Type: [application/json]
-      User-Agent: [Swiftype-Python/1.0.0]
+      X-Swiftype-Client: elastic-app-search-python
+      X-Swiftype-Client-Version: 2.0.0
     method: DELETE
     uri: http://localhost:3000/api/v1/engines/myuserengine.json
   response:

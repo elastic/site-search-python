@@ -3,7 +3,8 @@ interactions:
     body: ''
     headers:
       Content-Type: [application/json]
-      User-Agent: [Swiftype-Python/1.0.0]
+      X-Swiftype-Client: elastic-app-search-python
+      X-Swiftype-Client-Version: 2.0.0
     method: GET
     uri: http://localhost:3000/api/v1/users/12345.json?client_secret=4441879b5e2a9c3271f5b1a4bc223b715f091e5ed20fe75d1352e1290c7a6dfb&auth_token=a-test-api-key&client_id=3e4fd842fc99aecb4dc50e5b88a186c1e206ddd516cdd336da3622c4afd7e2e9
   response:
