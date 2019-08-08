@@ -18,6 +18,7 @@ setup(
     name = 'elastic-site-search',
     version = about['VERSION'],
     description = 'Elastic Site Search API Client for Python',
+    license = 'Apache 2.0',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author = 'Elastic',
