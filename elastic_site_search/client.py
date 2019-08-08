@@ -217,6 +217,7 @@ class Connection(object):
 
   def _request(self, method, path, params={}, data={}):
     headers = {}
+    headers['Content-Type'] = 'application/json'
     headers['X-Swiftype-Client'] = CLIENT_NAME
     headers['X-Swiftype-Client-Version'] = VERSION
     if self.__username is not None and self.__password is not None:
