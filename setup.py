@@ -5,16 +5,18 @@ from codecs import open
 from os import path
 from unittest import TestLoader
 
-from elastic_site_search.version import VERSION
-
 here = path.abspath(path.dirname(__file__))
+
+about = {}
+with open(path.join(here, 'elastic_site_search', 'version.py'), 'r', 'utf-8') as f:
+    exec(f.read(), about)
 
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
     name = 'elastic-site-search',
-    version = VERSION,
+    version = about['VERSION'],
     description = 'Elastic Site Search API Client for Python',
     long_description=long_description,
     long_description_content_type='text/markdown',
