@@ -20,7 +20,7 @@
 
 You can install the latest version of the Swiftype client using `pip`:
 
-    pip install swiftype
+    pip install elastic-site-search
 
 To install locally, clone this repository, `cd` into the directory and run:
 
@@ -34,8 +34,8 @@ To install locally, clone this repository, `cd` into the directory and run:
 
 2.  Configure your client:
 
-        from swiftype import swiftype
-        client = swiftype.Client(api_key='YOUR_API_KEY')
+        from elastic_site_search import Client
+        client = Client(api_key='YOUR_API_KEY')
 
 
 3.  Create an `Engine` named e.g. `youtube`:
@@ -103,8 +103,8 @@ or
 
 Before issuing commands to the API, configure the client with your API key:
 
-    import swiftype
-    client = swiftype.Client(api_key='YOUR_API_KEY')
+    from elastic_site_search import Client
+    client = Client(api_key='YOUR_API_KEY')
 
 You can find your API key in your [Account Settings](https://swiftype.com/user/edit).
 
