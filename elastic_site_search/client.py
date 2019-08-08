@@ -15,7 +15,7 @@ except ImportError:
 
 from .version import VERSION
 
-USER_AGENT = 'Swiftype-Python/' + VERSION
+CLIENT_NAME = 'elastic-app-search-python'
 DEFAULT_API_HOST = 'api.swiftype.com'
 DEFAULT_API_BASE_PATH = '/api/v1/'
 
@@ -217,8 +217,8 @@ class Connection(object):
 
   def _request(self, method, path, params={}, data={}):
     headers = {}
-    headers['User-Agent'] = USER_AGENT
-    headers['Content-Type'] = 'application/json'
+    headers['X-Swiftype-Client'] = CLIENT_NAME
+    headers['X-Swiftype-Client-Version'] = VERSION
     if self.__username is not None and self.__password is not None:
       credentials = "%s:%s" % (self.__username, self.__password)
       base64_credentials = base64.encodestring(credentials.encode('utf-8')).decode()

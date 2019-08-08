@@ -3,7 +3,8 @@ interactions:
     body: ''
     headers:
       Content-Type: [application/json]
-      User-Agent: [Swiftype-Python/1.0.0]
+      X-Swiftype-Client: elastic-app-search-python
+      X-Swiftype-Client-Version: 2.0.0
     method: GET
     uri: http://localhost:3000/api/v1/engines/api-test/analytics/top_queries_in_range.json?auth_token=a-test-api-key&start_date=2013-12-31&end_date=2014-01-01
   response:

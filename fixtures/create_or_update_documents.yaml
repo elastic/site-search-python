@@ -3,7 +3,8 @@ interactions:
     body: '{"documents": [{"external_id": "1"}, {"external_id": "2"}]}'
     headers:
       Content-Type: [application/json]
-      User-Agent: [Swiftype-Python/1.0.0]
+      X-Swiftype-Client: elastic-app-search-python
+      X-Swiftype-Client-Version: 2.0.0
     method: POST
     uri: http://localhost:3000/api/v1/engines/api-test/document_types/books/documents/bulk_create_or_update.json?auth_token=a-test-api-key
   response:
