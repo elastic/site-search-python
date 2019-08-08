@@ -3,7 +3,6 @@
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
-from unittest import TestLoader
 
 here = path.abspath(path.dirname(__file__))
 
