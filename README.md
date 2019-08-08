@@ -1,7 +1,7 @@
-<p align="center"><img src="https://github.com/swiftype/swiftype-py/blob/master/logo-site-search.png?raw=true" alt="Elastic Site Search Logo"></p>
+<p align="center"><img src="https://github.com/elastic/site-search-python/blob/master/logo-site-search.png?raw=true" alt="Elastic Site Search Logo"></p>
 
-<p align="center"><a href="https://travis-ci.org/swiftype/swiftype-py"><img src="https://travis-ci.org/swiftype/swiftype-py.png?branch=master" alt="Travis build"></a>
-<a href="https://github.com/swiftype/swiftype-py/releases"><img src="https://img.shields.io/github/release/swiftype/swiftype-py/all.svg?style=flat-square" alt="GitHub release" /></a></p>
+<p align="center"><a href="https://travis-ci.org/elastic/site-search-python"><img src="https://travis-ci.org/elastic/site-search-python.png?branch=master" alt="Travis build"></a>
+<a href="https://github.com/elastic/site-search-python/releases"><img src="https://img.shields.io/github/release/elastic/site-search-python/all.svg?style=flat-square" alt="GitHub release" /></a></p>
 
 > A first-party Python client for the [Elastic Site Search API](https://swiftype.com/documentation/site-search/overview).
 
@@ -18,7 +18,7 @@
 
 ## Getting started 🐣
 
-You can install the latest version of the Swiftype client using `pip`:
+You can install the latest version of the Elastic Site Search client using `pip`:
 
   ```bash
   pip install elastic-site-search
@@ -34,7 +34,7 @@ To install locally, clone this repository, `cd` into the directory and run:
 
 ## Usage
 
-1.  Create an account at [Swiftype](https://swiftype.com/) and get your API key from your [Account Settings](https://app.swiftype.com/settings/account).
+1.  Create [Elastic Site Search account](https://swiftype.com/) and get your API key from your [Account Settings](https://app.swiftype.com/settings/account).
 
 2.  Configure your client:
 
@@ -66,8 +66,8 @@ Add a `Document` to the `videos` `DocumentType`:
   client.create_document('youtube', 'videos', {
     'external_id':  'external_id1',
     'fields': [
-        {'name': 'title', 'value': 'Swiftype Demo', 'type': 'string'},
-        {'name': 'tags', 'value': ['Swiftype', 'Search', 'Full text search'], 'type': 'string'},
+        {'name': 'title', 'value': 'Site Search Demo', 'type': 'string'},
+        {'name': 'tags', 'value': ['Site Search', 'Search', 'Full text search'], 'type': 'string'},
         {'name': 'url', 'value': 'http://www.youtube.com/watch?v=pITuOcGgpBs', 'type': 'enum'},
         {'name': 'category', 'value': ['Tutorial', 'Product'], 'type': 'enum'},
         {'name': 'publication_date', 'value': '2012-05-08T12:07Z', 'type': 'date'},
@@ -83,8 +83,8 @@ Add a `Document` to the `channels` `DocumentType`:
   client.create_document('youtube', 'channels', {
     'external_id': 'external_id1',
     'fields': [
-      {'name': 'title', 'value': 'Swiftype', 'type': 'string'},
-      {'name': 'url', 'value': 'http://www.youtube.com/user/swiftype', 'type': 'enum'},
+      {'name': 'title', 'value': 'Elastic', 'type': 'string'},
+      {'name': 'url', 'value': 'http://www.youtube.com/user/elasticsearch', 'type': 'enum'},
       {'name': 'video_views', 'value': 15678, 'type': 'integer'},
       {'name': 'video_counts', 'value': 6, 'type': 'integer'}
     ]
@@ -96,14 +96,14 @@ Add a `Document` to the `channels` `DocumentType`:
 Now your `Engine` is ready to receive queries. By default, search queries will match any fields that are of type `string` or `text`. You can search each `DocumentType` individually:
 
   ```python
-  video_results = client.search_document_type('youtube', 'videos', 'swiftype')
-  channel_results = client.search_document_type('youtube', 'channels', 'swiftype')
+  video_results = client.search_document_type('youtube', 'videos', 'site search')
+  channel_results = client.search_document_type('youtube', 'channels', 'site search')
   ```
 
 or search all `DocumentType`s on your `Engine` at once:
 
   ```python   
-  results = client.search('youtube', 'swiftype')
+  results = client.search('youtube', 'site search')
   ```
 
 ### Autocomplete
@@ -111,13 +111,13 @@ or search all `DocumentType`s on your `Engine` at once:
 Finally, as with full-text searches, you may perform autocomplete-style (prefix match) searches as well:
 
   ```python
-  results = client.suggest('youtube', 'swi')
+  results = client.suggest('youtube', 'sit')
   ```
 
 or
 
   ```python
-  results = client.suggest_document_type('youtube', 'videos', 'swi')
+  results = client.suggest_document_type('youtube', 'videos', 'sit')
   ```
 
 ## API Documentation
@@ -135,22 +135,22 @@ You can find your API key in your [Account Settings](https://swiftype.com/user/e
 
 ### Search
 
-If you want to search for e.g. `swiftype` on your `Engine`, you can use:
+If you want to search for e.g. `site search` on your `Engine`, you can use:
 
   ```python
-  results = client.search('youtube', 'swiftype')
+  results = client.search('youtube', 'site search')
   ```
 
 To limit the search to only the `videos` DocumentType:
 
   ```python
-  results = client.search_document_type('youtube', 'videos', 'swiftype')
+  results = client.search_document_type('youtube', 'videos', 'site search')
   ```
 
 Both search methods allow you to specify options as an extra parameter to e.g. filter or sort on fields. For more details on these options please have a look at the [Search Options](https://swiftype.com/documentation/searching). Here is an example for showing only `videos` that are in the `category` `Tutorial`:
 
   ```python
-  results = client.search_document_type('youtube', 'videos', 'swiftype', {'filters': {'videos': {'category': 'Tutorial'}}})
+  results = client.search_document_type('youtube', 'videos', 'site search', {'filters': {'videos': {'category': 'Tutorial'}}})
   ```
 
 ### Autocomplete
@@ -158,19 +158,19 @@ Both search methods allow you to specify options as an extra parameter to e.g. f
 Autocompletes have the same functionality as searches. You can autocomplete using all documents:
 
   ```python
-  results = client.suggest('youtube', 'swi')
+  results = client.suggest('youtube', 'sit')
   ```
 
 or just for one DocumentType:
 
   ```python
-  results = client.suggest_document_type('youtube', 'videos', 'swi')
+  results = client.suggest_document_type('youtube', 'videos', 'sit')
   ```
 
 or add options to have more control over the results:
 
   ```python
-  results = client.suggest('youtube', 'swi', {'sort_field': {'videos': 'likes'}})
+  results = client.suggest('youtube', 'sit', {'sort_field': {'videos': 'likes'}})
   ```
 
 ### Engines
@@ -251,8 +251,8 @@ Create a new `Document` with mandatory `external_id` and user-defined fields:
   document = client.create_document('youtube', 'videos', {
     'external_id': 'external_id1',
     'fields': [
-      {'name': 'title', 'value': 'Swiftype Demo', 'type': 'string'},
-      {'name': 'tags', 'value': ['Swiftype', 'Search', 'Full text search'], 'type': 'string'},
+      {'name': 'title', 'value': 'Site Search Demo', 'type': 'string'},
+      {'name': 'tags', 'value': ['Site Search', 'Search', 'Full text search'], 'type': 'string'},
       {'name': 'url', 'value': 'http://www.youtube.com/watch?v=pITuOcGgpBs', 'type': 'enum'},
       {'name': 'category', 'value': ['Tutorial', 'Product'], 'type': 'enum'},
       {'name': 'publication_date', 'value': '2012-05-08T12:07Z', 'type': 'date'},
@@ -269,8 +269,8 @@ Create multiple `Document`s at once and return status for each `Document` creati
     {
       'external_id': 'external_id1',
       'fields': [
-        {'name': 'title', 'value': 'Swiftype Demo', 'type': 'string'},
-        {'name': 'tags', 'value': ['Swiftype', 'Search', 'Full text search'], 'type': 'string'},
+        {'name': 'title', 'value': 'Site Search Demo', 'type': 'string'},
+        {'name': 'tags', 'value': ['Site Search', 'Search', 'Full text search'], 'type': 'string'},
         {'name': 'url', 'value': 'http://www.youtube.com/watch?v=pITuOcGgpBs', 'type': 'enum'},
         {'name': 'category', 'value': ['Tutorial', 'Product'], 'type': 'enum'},
         {'name': 'publication_date', 'value': '2012-05-08T12:07Z', 'type': 'date'},
@@ -281,8 +281,8 @@ Create multiple `Document`s at once and return status for each `Document` creati
     {
       'external_id': 'external_id2',
       'fields': [
-        {'name': 'title', 'value': 'Swiftype Search Wordpress Plugin Demo', 'type': 'string'},
-        {'name': 'tags', 'value': ['Swiftype', 'Search', 'Full text search', 'WordPress'], 'type': 'string'},
+        {'name': 'title', 'value': 'Site Search Search Wordpress Plugin Demo', 'type': 'string'},
+        {'name': 'tags', 'value': ['Site Search', 'Search', 'Full text search', 'WordPress'], 'type': 'string'},
         {'name': 'url', 'value': 'http://www.youtube.com/watch?v=rukXYKEpvS4', 'type': 'enum'},
         {'name': 'category', 'value': ['Tutorial', 'Wordpress'], 'type': 'enum'},
         {'name': 'publication_date', 'value': '2012-08-15T09:07Z', 'type': 'date'},
@@ -314,8 +314,8 @@ Create or update a `Document`:
   document = client.create_or_update_document('youtube', 'videos', {
     'external_id': 'external_id3',
     'fields': [
-      {'name': 'title', 'value': 'Swiftype Install Type 1: Show results in an overlay', 'type': 'string'},
-      {'name': 'tags', 'value': ['Swiftype', 'Search', 'Full text search', 'Web'], 'type': 'string'},
+      {'name': 'title', 'value': 'Site Search Install Type 1: Show results in an overlay', 'type': 'string'},
+      {'name': 'tags', 'value': ['Site Search', 'Search', 'Full text search', 'Web'], 'type': 'string'},
       {'name': 'url', 'value': 'http://www.youtube.com/watch?v=mj2ApIx3frs', 'type': 'enum'}
     ]
   })
@@ -328,16 +328,16 @@ Create or update multiple `Documents` at once:
     {
       'external_id': 'external_id4',
       'fields': [
-        {'name': 'title', 'value': 'Swiftype Install Type 2: Show results on the current page', 'type': 'string'},
-        {'name': 'tags', 'value': ['Swiftype', 'Search', 'Full text search', 'Web'], 'type': 'string'},
+        {'name': 'title', 'value': 'Site Search Install Type 2: Show results on the current page', 'type': 'string'},
+        {'name': 'tags', 'value': ['Site Search', 'Search', 'Full text search', 'Web'], 'type': 'string'},
         {'name': 'url', 'value': 'http://www.youtube.com/watch?v=6uaZXYK2WOE', 'type': 'enum'}
       ]
     },
     {
       'external_id': 'external_id5',
       'fields': [
-        {'name': 'title', 'value': 'Swiftype Install Type 3: Show results on a new page', 'type': 'string'},
-        {'name': 'tags', 'value': ['Swiftype', 'Search', 'Full text search', 'Web'], 'type': 'string'},
+        {'name': 'title', 'value': 'Site Search Install Type 3: Show results on a new page', 'type': 'string'},
+        {'name': 'tags', 'value': ['Site Search', 'Search', 'Full text search', 'Web'], 'type': 'string'},
         {'name': 'url', 'value': 'http://www.youtube.com/watch?v=ebSWAscBPtc', 'type': 'enum'}
       ]
     }
@@ -369,10 +369,10 @@ Retrieve a specific `Domain` by `id`:
   domain = client.domain('websites', 'generated_id')
   ```
 
-Create a new `Domain` with the URL `https://swiftype.com` and start crawling:
+Create a new `Domain` with the URL `https://elastic.co` and start crawling:
 
   ```python
-  domain = client.create_domain('websites', 'https://swiftype.com')
+  domain = client.create_domain('websites', 'https://elastic.co')
   ```
 
 Delete a `Domain` using its `id`:
@@ -390,7 +390,7 @@ Initiate a recrawl of a specific `Domain` using its `id`:
 Add or update a URL for a `Domain`:
 
   ```python
-  client.crawl_url('websites', 'generated_id', 'https://swiftype.com/new/path/about.html')
+  client.crawl_url('websites', 'generated_id', 'https://elastic.co/new/path/about.html')
   ```
 
 ### Analytics
@@ -451,14 +451,14 @@ You can also specify a date range for no result queries:
 
   ```bash
   pip install -r test_requirements.txt
-  python tests/test_swiftype.py
+  python tests/test_client.py
   ```
 
 ## FAQ 🔮
 
 ### Where do I report issues with the client?
 
-If something is not working as expected, please open an [issue](https://github.com/swiftype/swiftype-py/issues/new).
+If something is not working as expected, please open an [issue](https://github.com/elastic/site-search-python/issues/new).
 
 ### Where can I learn more about Site Search?
 
@@ -472,7 +472,7 @@ You can checkout the [Elastic Site Search community discuss forums](https://disc
 
 We welcome contributors to the project. Before you begin, a couple notes...
 
-+ Before opening a pull request, please create an issue to [discuss the scope of your proposal](https://github.com/swiftype/swiftype-py/issues).
++ Before opening a pull request, please create an issue to [discuss the scope of your proposal](https://github.com/elastic/site-search-python/issues).
 + Please write simple code and concise documentation, when appropriate.
 
 ## License 📗
