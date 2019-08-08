@@ -3,7 +3,7 @@
 <p align="center"><a href="https://travis-ci.org/elastic/site-search-python"><img src="https://travis-ci.org/elastic/site-search-python.png?branch=master" alt="Travis build"></a>
 <a href="https://github.com/elastic/site-search-python/releases"><img src="https://img.shields.io/github/release/elastic/site-search-python/all.svg?style=flat-square" alt="GitHub release" /></a></p>
 
-> A first-party Python client for the [Elastic Site Search API](https://swiftype.com/documentation/site-search/overview).
+> A first-party Python client for the [Elastic Site Search API](https://elastic.co/products/site-search).
 
 ## Contents
 
@@ -30,11 +30,11 @@ To install locally, clone this repository, `cd` into the directory and run:
   python setup.py install
   ```
 
-> **Note:** This client has been developed for the [Elastic Site Search](https://www.swiftype.com/site-search) API endpoints only. You may refer to the [Elastic Site Search API Documentation](https://swiftype.com/documentation/site-search/overview) for additional context.
+> **Note:** This client has been developed for the [Elastic Site Search](https://elastic.co/products/site-search) API endpoints only. You may refer to the [Elastic Site Search API Documentation](https://swiftype.com/documentation/site-search/overview) for additional context.
 
 ## Usage
 
-1.  Create [Elastic Site Search account](https://swiftype.com/) and get your API key from your [Account Settings](https://app.swiftype.com/settings/account).
+1.  Create [Elastic Site Search account](https://app.swiftype.com/signup) and get your API key from your [Account Settings](https://app.swiftype.com/settings/account).
 
 2.  Configure your client:
 

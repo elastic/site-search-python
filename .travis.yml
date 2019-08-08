@@ -10,4 +10,4 @@ matrix:
 install:
   - pip install tox
 script:
-  - tox -e $TOXENV
+  - tox -e $TOXENV test

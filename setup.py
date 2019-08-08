@@ -1,18 +1,29 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
+from codecs import open
+from os import path
+from unittest import TestLoader
 
 from elastic_site_search.version import VERSION
+
+here = path.abspath(path.dirname(__file__))
+
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name = 'elastic-site-search',
     version = VERSION,
     description = 'Elastic Site Search API Client for Python',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author = 'Elastic',
     author_email = 'support@elastic.co',
     url = 'https://github.com/elastic/site-search-python',
-    packages = find_packages(),
+    packages = find_packages(exclude=['tests', 'fixtures']),
     install_requires = ["anyjson", "six"],
+    tests_require=['nose', 'vcrpy', 'mock', 'unittest2'],
     test_suite='nose.collector',
     classifiers = [
         'Intended Audience :: Developers',
