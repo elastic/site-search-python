@@ -351,7 +351,9 @@ Destroy a `Document`:
 
 Destroy multiple `Document`s at once:
 
-    stati = client.destroy_documents('youtube','videos',['external_id2','external_id3','external_id6'])
+  ```python
+  stati = client.destroy_documents('youtube','videos',['external_id2','external_id3','external_id6'])
+  ```
 
 ### Domains
 
