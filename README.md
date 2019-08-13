@@ -16,6 +16,8 @@
 
 ***
 
+Test
+
 ## Getting started 🐣
 
 You can install the latest version of the Elastic Site Search client using `pip`:
