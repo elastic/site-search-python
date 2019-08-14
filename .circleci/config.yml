@@ -21,8 +21,8 @@ jobs:
     - checkout
     - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "requirements.txt" }}
-        - v1-dependencies-
+        - v1-dependencies-<< parameters.executor >>-{{ checksum "requirements.txt" }}
+        - v1-dependencies-<< parameters.executor >>
     - run:
         name: install dependencies
         command: |
@@ -32,7 +32,7 @@ jobs:
     - save_cache:
         paths:
         - ./venv
-        key: v1-dependencies-{{ checksum "requirements.txt" }}
+        key: v1-dependencies-<< parameters.executor >>-{{ checksum "requirements.txt" }}
     - run:
         name: run tests
         command: |
