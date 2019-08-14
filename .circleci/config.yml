@@ -3,16 +3,16 @@
 version: 2.1
 
 executors:
-  python-2.6: {docker: [{image: 'circleci/python:2.6'}]}
-  python-2.7: {docker: [{image: 'circleci/python:2.7'}]}
-  python-3.0: {docker: [{image: 'circleci/python:3.0'}]}
-  python-3.1: {docker: [{image: 'circleci/python:3.1'}]}
-  python-3.2: {docker: [{image: 'circleci/python:3.2'}]}
-  python-3.3: {docker: [{image: 'circleci/python:3.3'}]}
-  python-3.4: {docker: [{image: 'circleci/python:3.4'}]}
-  python-3.5: {docker: [{image: 'circleci/python:3.5'}]}
-  python-3.6: {docker: [{image: 'circleci/python:3.6'}]}
-  python-3.7: {docker: [{image: 'circleci/python:3.7'}]}
+  python-26: {docker: [{image: 'circleci/python:2.6'}]}
+  python-27: {docker: [{image: 'circleci/python:2.7'}]}
+  python-30: {docker: [{image: 'circleci/python:3.0'}]}
+  python-31: {docker: [{image: 'circleci/python:3.1'}]}
+  python-32: {docker: [{image: 'circleci/python:3.2'}]}
+  python-33: {docker: [{image: 'circleci/python:3.3'}]}
+  python-34: {docker: [{image: 'circleci/python:3.4'}]}
+  python-35: {docker: [{image: 'circleci/python:3.5'}]}
+  python-36: {docker: [{image: 'circleci/python:3.6'}]}
+  python-37: {docker: [{image: 'circleci/python:3.7'}]}
 
 jobs:
   build:
@@ -46,13 +46,13 @@ jobs:
 workflows:
   run-tests:
     jobs:
-    - build: {name: run-tests-python-2.6, executor: python-2.6}
-    - build: {name: run-tests-python-2.7, executor: python-2.7}
-    - build: {name: run-tests-python-3.0, executor: python-3.0}
-    - build: {name: run-tests-python-3.1, executor: python-3.1}
-    - build: {name: run-tests-python-3.2, executor: python-3.2}
-    - build: {name: run-tests-python-3.3, executor: python-3.3}
-    - build: {name: run-tests-python-3.5, executor: python-3.4}
-    - build: {name: run-tests-python-3.5, executor: python-3.5}
-    - build: {name: run-tests-python-3.6, executor: python-3.6}
-    - build: {name: run-tests-python-3.7, executor: python-3.7}
+    - build: {name: run-tests-python-2.6, executor: python-26}
+    - build: {name: run-tests-python-2.7, executor: python-27}
+    - build: {name: run-tests-python-3.0, executor: python-30}
+    - build: {name: run-tests-python-3.1, executor: python-31}
+    - build: {name: run-tests-python-3.2, executor: python-32}
+    - build: {name: run-tests-python-3.3, executor: python-33}
+    - build: {name: run-tests-python-3.5, executor: python-34}
+    - build: {name: run-tests-python-3.5, executor: python-35}
+    - build: {name: run-tests-python-3.6, executor: python-36}
+    - build: {name: run-tests-python-3.7, executor: python-37}
