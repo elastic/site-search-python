@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/elastic/site-search-python/blob/master/logo-site-search.png?raw=true" alt="Elastic Site Search Logo"></p>
 
-<p align="center"><a href="https://travis-ci.org/elastic/site-search-python"><img src="https://travis-ci.org/elastic/site-search-python.png?branch=master" alt="Travis build"></a>
+<p align="center"><a href="https://circleci.com/gh/elastic/site-search-python"><img src="https://img.shields.io/circleci/build/github/elastic/site-search-python/master" alt="CircleCI build"></a>
 <a href="https://github.com/elastic/site-search-python/releases"><img src="https://img.shields.io/github/release/elastic/site-search-python/all.svg?style=flat-square" alt="GitHub release" /></a></p>
 
 > A first-party Python client for the [Elastic Site Search API](https://elastic.co/products/site-search).
