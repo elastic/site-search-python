@@ -1,15 +1,21 @@
 interactions:
-- request:
-    body: '{"engine": {"name": "myusersengine"}}'
-    headers:
-      Authorization: [Bearer 6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e]
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: POST
-    uri: http://localhost:3000/api/v1/engines.json
-  response:
-    body: {string: '{"name":"myusersengine","slug":"myusersengine","key":"wLDDEvF4GetXAkx6xiss","id":"52ccaa333ae740f4af00002b","_id":"52ccaa333ae740f4af00002b","updated_at":"2014-01-08T01:30:27Z","document_count":0}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: '{"engine": {"name": "myusersengine"}}'
+      headers:
+        Authorization:
+          [
+            Bearer 6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e,
+          ]
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: POST
+      uri: http://localhost:3000/api/v1/engines.json
+    response:
+      body:
+        {
+          string: '{"name":"myusersengine","slug":"myusersengine","key":"wLDDEvF4GetXAkx6xiss","id":"52ccaa333ae740f4af00002b","_id":"52ccaa333ae740f4af00002b","updated_at":"2014-01-08T01:30:27Z","document_count":0}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

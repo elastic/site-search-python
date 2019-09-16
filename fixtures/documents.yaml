@@ -1,15 +1,19 @@
 interactions:
-- request:
-    body: ''
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: GET
-    uri: http://localhost:3000/api/v1/engines/api-test/document_types/books/documents.json?auth_token=a-test-api-key
-  response:
-    body: {string: '[{"external_id":"1","engine_id":"52c73e443ae7403ec900001e","document_type_id":"52c742b63ae7401cb6000004","id":"52c743d73ae7403ec9000024","_id":"52c743d73ae7403ec9000024","updated_at":"2014-01-03T23:18:18Z"},{"external_id":"2","engine_id":"52c73e443ae7403ec900001e","document_type_id":"52c742b63ae7401cb6000004","id":"52c7444d3ae7403ec9000026","_id":"52c7444d3ae7403ec9000026","updated_at":"2014-01-03T23:32:24Z","title":"new
-        title","author":"Fyodor Dostoevsky","genre":"fiction"}]'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: ""
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: GET
+      uri: http://localhost:3000/api/v1/engines/api-test/document_types/books/documents.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string:
+            '[{"external_id":"1","engine_id":"52c73e443ae7403ec900001e","document_type_id":"52c742b63ae7401cb6000004","id":"52c743d73ae7403ec9000024","_id":"52c743d73ae7403ec9000024","updated_at":"2014-01-03T23:18:18Z"},{"external_id":"2","engine_id":"52c73e443ae7403ec900001e","document_type_id":"52c742b63ae7401cb6000004","id":"52c7444d3ae7403ec9000026","_id":"52c7444d3ae7403ec9000026","updated_at":"2014-01-03T23:32:24Z","title":"new
+            title","author":"Fyodor Dostoevsky","genre":"fiction"}]',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

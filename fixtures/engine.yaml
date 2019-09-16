@@ -1,14 +1,17 @@
 interactions:
-- request:
-    body: ''
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: GET
-    uri: http://localhost:3000/api/v1/engines/api-test.json?auth_token=a-test-api-key
-  response:
-    body: {string: '{"name":"api test ","slug":"api-test","key":"k5zFUMeDxn2uFaqzGDrS","id":"52c73e443ae7403ec900001e","_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-03T23:35:21Z","document_count":2}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: ""
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: GET
+      uri: http://localhost:3000/api/v1/engines/api-test.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '{"name":"api test ","slug":"api-test","key":"k5zFUMeDxn2uFaqzGDrS","id":"52c73e443ae7403ec900001e","_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-03T23:35:21Z","document_count":2}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

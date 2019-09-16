@@ -1,14 +1,17 @@
 interactions:
-- request:
-    body: '{"domain": {"submitted_url": "http://www.example.com"}}'
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: POST
-    uri: http://localhost:3000/api/v1/engines/crawler-demo/domains.json?auth_token=a-test-api-key
-  response:
-    body: {string: '{"id":"52cb2a8a3ae7403ec9000047","engine_id":"52c74ea83ae7403ec9000032","submitted_url":"http://www.example.com","start_crawl_url":"http://www.example.com/","crawling":false,"document_count":0,"updated_at":"2014-01-06T22:13:30Z"}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: '{"domain": {"submitted_url": "http://www.example.com"}}'
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: POST
+      uri: http://localhost:3000/api/v1/engines/crawler-demo/domains.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '{"id":"52cb2a8a3ae7403ec9000047","engine_id":"52c74ea83ae7403ec9000032","submitted_url":"http://www.example.com","start_crawl_url":"http://www.example.com/","crawling":false,"document_count":0,"updated_at":"2014-01-06T22:13:30Z"}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

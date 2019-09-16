@@ -1,15 +1,18 @@
 interactions:
-- request:
-    body: '{"documents": [{"external_id": "doc_id1"}, {"external_id": "doc_id2"}]}'
-    headers:
-      Authorization: [Bearer 6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e]
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: POST
-    uri: http://localhost:3000/api/v1/engines/myusersengine/document_types/videos/documents/bulk_create.json
-  response:
-    body: {string: '[true,true]'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: '{"documents": [{"external_id": "doc_id1"}, {"external_id": "doc_id2"}]}'
+      headers:
+        Authorization:
+          [
+            Bearer 6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e,
+          ]
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: POST
+      uri: http://localhost:3000/api/v1/engines/myusersengine/document_types/videos/documents/bulk_create.json
+    response:
+      body: { string: "[true,true]" }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

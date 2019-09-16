@@ -1,14 +1,17 @@
 interactions:
-- request:
-    body: '{"engine": {"name": "myengine"}}'
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: POST
-    uri: http://localhost:3000/api/v1/engines.json?auth_token=a-test-api-key
-  response:
-    body: {string: '{"name":"myengine","slug":"myengine","key":"ziLaAWiqF1VpspxTTp3J","id":"52cb2bda3ae7403ec9000048","_id":"52cb2bda3ae7403ec9000048","updated_at":"2014-01-06T22:19:06Z","document_count":0}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: '{"engine": {"name": "myengine"}}'
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: POST
+      uri: http://localhost:3000/api/v1/engines.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '{"name":"myengine","slug":"myengine","key":"ziLaAWiqF1VpspxTTp3J","id":"52cb2bda3ae7403ec9000048","_id":"52cb2bda3ae7403ec9000048","updated_at":"2014-01-06T22:19:06Z","document_count":0}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1
