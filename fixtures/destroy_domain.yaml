@@ -1,14 +1,14 @@
 interactions:
-- request:
-    body: ''
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: DELETE
-    uri: http://localhost:3000/api/v1/engines/crawler-demo/domains/52c759423ae7403ec900003b.json?auth_token=a-test-api-key
-  response:
-    body: {string: ''}
-    headers: {}
-    status: {code: 204, message: No Content}
+  - request:
+      body: ""
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: DELETE
+      uri: http://localhost:3000/api/v1/engines/crawler-demo/domains/52c759423ae7403ec900003b.json?auth_token=a-test-api-key
+    response:
+      body: { string: "" }
+      headers: {}
+      status: { code: 204, message: No Content }
 version: 1

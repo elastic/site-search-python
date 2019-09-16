@@ -1,14 +1,17 @@
 interactions:
-- request:
-    body: ''
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: GET
-    uri: http://localhost:3000/api/v1/engines/api-test/analytics/autoselects.json?auth_token=a-test-api-key
-  response:
-    body: {string: '[["2014-01-06",0],["2014-01-05",0],["2014-01-04",0],["2014-01-03",0],["2014-01-02",0],["2014-01-01",0],["2013-12-31",0],["2013-12-30",0],["2013-12-29",0],["2013-12-28",0],["2013-12-27",0],["2013-12-26",0],["2013-12-25",0],["2013-12-24",0],["2013-12-23",0]]'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: ""
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: GET
+      uri: http://localhost:3000/api/v1/engines/api-test/analytics/autoselects.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '[["2014-01-06",0],["2014-01-05",0],["2014-01-04",0],["2014-01-03",0],["2014-01-02",0],["2014-01-01",0],["2013-12-31",0],["2013-12-30",0],["2013-12-29",0],["2013-12-28",0],["2013-12-27",0],["2013-12-26",0],["2013-12-25",0],["2013-12-24",0],["2013-12-23",0]]',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

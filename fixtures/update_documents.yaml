@@ -1,15 +1,16 @@
 interactions:
-- request:
-    body: '{"documents": [{"fields": {"myfieldthathasnotbeencreated": "foobar"}, "external_id":
-      "1"}, {"fields": {"title": "new title"}, "external_id": "2"}]}'
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: PUT
-    uri: http://localhost:3000/api/v1/engines/api-test/document_types/books/documents/bulk_update.json?auth_token=a-test-api-key
-  response:
-    body: {string: '[false,true]'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body:
+        '{"documents": [{"fields": {"myfieldthathasnotbeencreated": "foobar"}, "external_id":
+        "1"}, {"fields": {"title": "new title"}, "external_id": "2"}]}'
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: PUT
+      uri: http://localhost:3000/api/v1/engines/api-test/document_types/books/documents/bulk_update.json?auth_token=a-test-api-key
+    response:
+      body: { string: "[false,true]" }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

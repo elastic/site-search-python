@@ -1,14 +1,17 @@
 interactions:
-- request:
-    body: '{"q": "*"}'
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: GET
-    uri: http://localhost:3000/api/v1/engines/api-test/document_types/books/suggest.json?auth_token=a-test-api-key
-  response:
-    body: {string: '{"record_count":0,"records":{"books":[]},"info":{},"errors":{}}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: '{"q": "*"}'
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: GET
+      uri: http://localhost:3000/api/v1/engines/api-test/document_types/books/suggest.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '{"record_count":0,"records":{"books":[]},"info":{},"errors":{}}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

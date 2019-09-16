@@ -1,14 +1,17 @@
 interactions:
-- request:
-    body: '{"document_type": {"name": "videos"}}'
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: POST
-    uri: http://localhost:3000/api/v1/engines/api-test/document_types.json?auth_token=a-test-api-key
-  response:
-    body: {string: '{"id":"52cb1ee93ae7403ec900003c","name":"videos","slug":"videos","engine_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-06T21:23:53Z","document_count":0,"field_mapping":{}}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: '{"document_type": {"name": "videos"}}'
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: POST
+      uri: http://localhost:3000/api/v1/engines/api-test/document_types.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '{"id":"52cb1ee93ae7403ec900003c","name":"videos","slug":"videos","engine_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-06T21:23:53Z","document_count":0,"field_mapping":{}}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

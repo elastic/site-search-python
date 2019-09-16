@@ -1,15 +1,21 @@
 interactions:
-- request:
-    body: '{"document": {"external_id": "doc_id"}}'
-    headers:
-      Authorization: [Bearer 6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e]
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: POST
-    uri: http://localhost:3000/api/v1/engines/myusersengine/document_types/videos/documents.json
-  response:
-    body: {string: '{"external_id":"doc_id","engine_id":"52cca3f13ae740f4af000023","document_type_id":"52cca4a43ae740f4af000024","id":"52cca54f3ae740f4af000026","_id":"52cca54f3ae740f4af000026","updated_at":"2014-01-08T01:09:35Z"}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: '{"document": {"external_id": "doc_id"}}'
+      headers:
+        Authorization:
+          [
+            Bearer 6cf7fbd297f00a8e3863a0595f55ff7d141cbef2fcbe00159d0f7403649b384e,
+          ]
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: POST
+      uri: http://localhost:3000/api/v1/engines/myusersengine/document_types/videos/documents.json
+    response:
+      body:
+        {
+          string: '{"external_id":"doc_id","engine_id":"52cca3f13ae740f4af000023","document_type_id":"52cca4a43ae740f4af000024","id":"52cca54f3ae740f4af000026","_id":"52cca54f3ae740f4af000026","updated_at":"2014-01-08T01:09:35Z"}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

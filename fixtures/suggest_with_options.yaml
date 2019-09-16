@@ -1,26 +1,32 @@
 interactions:
-- request:
-    body: ''
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: GET
-    uri: http://localhost:3000/api/v1/engines/api-test/document_types.json?auth_token=a-test-api-key
-  response:
-    body: {string: '[{"id":"52c73e443ae7403ec900001d","name":"responses","slug":"responses","engine_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-03T22:48:36Z","document_count":0,"field_mapping":{}},{"id":"52c742b63ae7401cb6000004","name":"books","slug":"books","engine_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-03T23:43:03Z","document_count":2,"field_mapping":{"external_id":"enum","updated_at":"date","title":"string","author":"string","genre":"enum"}}]'}
-    headers: {}
-    status: {code: 200, message: OK}
-- request:
-    body: '{"q": "query", "page": 2}'
-    headers:
-      Content-Type: [application/json]
-      X-Swiftype-Client: elastic-app-search-python
-      X-Swiftype-Client-Version: 2.0.0
-    method: GET
-    uri: http://localhost:3000/api/v1/engines/api-test/suggest.json?auth_token=a-test-api-key
-  response:
-    body: {string: '{"record_count":0,"records":{"responses":[],"books":[]},"info":{"responses":{"query":"query","current_page":2,"num_pages":0,"per_page":10,"total_result_count":0},"books":{"query":"query","current_page":2,"num_pages":0,"per_page":10,"total_result_count":0}},"errors":{}}'}
-    headers: {}
-    status: {code: 200, message: OK}
+  - request:
+      body: ""
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: GET
+      uri: http://localhost:3000/api/v1/engines/api-test/document_types.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '[{"id":"52c73e443ae7403ec900001d","name":"responses","slug":"responses","engine_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-03T22:48:36Z","document_count":0,"field_mapping":{}},{"id":"52c742b63ae7401cb6000004","name":"books","slug":"books","engine_id":"52c73e443ae7403ec900001e","updated_at":"2014-01-03T23:43:03Z","document_count":2,"field_mapping":{"external_id":"enum","updated_at":"date","title":"string","author":"string","genre":"enum"}}]',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
+  - request:
+      body: '{"q": "query", "page": 2}'
+      headers:
+        Content-Type: [application/json]
+        X-Swiftype-Client: elastic-site-search-python
+        X-Swiftype-Client-Version: 2.0.0
+      method: GET
+      uri: http://localhost:3000/api/v1/engines/api-test/suggest.json?auth_token=a-test-api-key
+    response:
+      body:
+        {
+          string: '{"record_count":0,"records":{"responses":[],"books":[]},"info":{"responses":{"query":"query","current_page":2,"num_pages":0,"per_page":10,"total_result_count":0},"books":{"query":"query","current_page":2,"num_pages":0,"per_page":10,"total_result_count":0}},"errors":{}}',
+        }
+      headers: {}
+      status: { code: 200, message: OK }
 version: 1

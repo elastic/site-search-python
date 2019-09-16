@@ -15,7 +15,7 @@ except ImportError:
 
 from .version import VERSION
 
-CLIENT_NAME = 'elastic-app-search-python'
+CLIENT_NAME = 'elastic-site-search-python'
 DEFAULT_API_HOST = 'api.swiftype.com'
 DEFAULT_API_BASE_PATH = '/api/v1/'
 
