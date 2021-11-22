@@ -161,7 +161,7 @@ class Client(object):
     return urlunparse(('https', 'swiftype.com', '/sso', '', urlencode(params), ''))
 
   def _sso_token(self, user_id, timestamp):
-    return hashlib.sha1((
+    return hashlib.sha256((
         '%s:%s:%s' % (user_id, self.client_secret, timestamp)
     ).encode('utf-8')).hexdigest()
 

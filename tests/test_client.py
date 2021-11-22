@@ -343,7 +343,7 @@ class TestPlatformUsers(unittest.TestCase):
         timestamp = 1379382520
         user_id = '5064a7de2ed960e715000276'
         token = self.client._sso_token(user_id, timestamp)
-        self.assertEqual(token, '81033d182ad51f231cc9cda9fb24f2298a411437')
+        self.assertEqual(token, '3da93f6d82efc8530614966ab847fd6d0b6d158ef02e4e65a8f731e299c28d86')
 
     def test_sso_url(self):
         self.client._get_timestamp = Mock(return_value=1379382520)
@@ -354,7 +354,7 @@ class TestPlatformUsers(unittest.TestCase):
             {
                 'user_id': ['5064a7de2ed960e715000276'],
                 'client_id': ['3e4fd842fc99aecb4dc50e5b88a186c1e206ddd516cdd336da3622c4afd7e2e9'],
-                'token': ['81033d182ad51f231cc9cda9fb24f2298a411437'],
+                'token': ['3da93f6d82efc8530614966ab847fd6d0b6d158ef02e4e65a8f731e299c28d86'],
                 'timestamp': ['1379382520'],
             },
         )
