@@ -24,7 +24,7 @@ setup(
     author_email = 'support@elastic.co',
     url = 'https://github.com/elastic/site-search-python',
     packages = find_packages(exclude=['tests', 'fixtures']),
-    install_requires = ["anyjson", "six"],
+    install_requires = ["six"],
     tests_require=['nose', 'vcrpy', 'mock', 'unittest2'],
     test_suite='nose.collector',
     classifiers = [
