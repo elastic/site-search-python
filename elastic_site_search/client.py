@@ -4,7 +4,7 @@ import base64
 import time
 import hashlib
 
-import anyjson
+import json
 from six.moves.urllib_parse import urlunparse, urlencode
 
 try:
@@ -238,7 +238,7 @@ class Connection(object):
     if query:
       full_path += '?' + query
 
-    body = anyjson.serialize(data) if data else ''
+    body = json.dumps(data) if data else ''
 
     connection = httplib.HTTPConnection(self.__host)
     connection.request(method, full_path, body, headers)
@@ -248,7 +248,7 @@ class Connection(object):
     if (response.status // 100 == 2):
         if response.body:
             try:
-                response.body = anyjson.deserialize(response.body.decode('utf-8'))
+                response.body = json.loads(response.body.decode('utf-8'))
             except ValueError as e:
                 raise InvalidResponseFromServer('The JSON response could not be parsed: %s.\n%s' % (e, response.body))
             ret = {'status': response.status, 'body':response.body }
