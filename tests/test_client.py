@@ -298,7 +298,7 @@ class TestClientUsernameAndPassword(unittest.TestCase):
         )
 
     def test_engine_create(self):
-        with vcr.use_cassette('fixtures/engine_create.yaml'):
+        with vcr.use_cassette('fixtures/engine_create_username_password_auth.yaml'):
             engine = 'myengine'
             slug = self.client.create_engine(engine)['body']['slug']
             self.assertEqual(slug, engine)
