@@ -265,7 +265,7 @@ class Connection(object):
     }
     if self.__username is not None and self.__password is not None:
       credentials = "%s:%s" % (self.__username, self.__password)
-      base64_credentials = base64.encodestring(credentials.encode('utf-8')).decode()
+      base64_credentials = base64.encodebytes(credentials.encode('utf-8')).decode()
       authorization = "Basic %s" % base64_credentials[:-1]
       headers['Authorization'] = authorization
     elif self.__access_token is not None and self.__api_key is None:
