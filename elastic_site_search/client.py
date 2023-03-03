@@ -59,49 +59,73 @@ class Client(object):
   def document(self, engine_id, document_type_id, document_id):
     return self.conn._get(self.__document_path(engine_id, document_type_id, document_id))
 
-  def create_document(self, engine_id, document_type_id, document={}):
+  def create_document(self, engine_id, document_type_id, document=None):
+    if document is None:
+      document = {}
     return self.conn._post(self.__documents_path(engine_id, document_type_id), data={'document':document})
 
-  def create_or_update_document(self, engine_id, document_type_id, document={}):
+  def create_or_update_document(self, engine_id, document_type_id, document=None):
+    if document is None:
+      document = {}
     return self.conn._post(self.__documents_path(engine_id, document_type_id) + '/create_or_update', data={'document':document})
 
-  def create_documents(self, engine_id, document_type_id, documents=[]):
+  def create_documents(self, engine_id, document_type_id, documents=None):
+    if documents is None:
+      documents = []
     return self.conn._post(self.__documents_path(engine_id, document_type_id) + '/bulk_create', data={'documents':documents})
 
-  def create_or_update_documents(self, engine_id, document_type_id, documents=[]):
+  def create_or_update_documents(self, engine_id, document_type_id, documents=None):
+    if documents is None:
+      documents = []
     return self.conn._post(self.__documents_path(engine_id, document_type_id) + '/bulk_create_or_update', data={'documents':documents})
 
-  def create_or_update_documents_verbose(self, engine_id, document_type_id, documents=[]):
+  def create_or_update_documents_verbose(self, engine_id, document_type_id, documents=None):
+    if documents is None:
+      documents = []
     return self.conn._post(self.__documents_path(engine_id, document_type_id) + '/bulk_create_or_update_verbose', data={'documents':documents})
 
-  def update_document(self, engine_id, document_type_id, document_id, fields={}):
+  def update_document(self, engine_id, document_type_id, document_id, fields=None):
+    if fields is None:
+      fields = {}
     return self.conn._put(self.__document_path(engine_id, document_type_id, document_id) + '/update_fields', data={'fields':fields})
 
-  def update_documents(self, engine_id, document_type_id, documents=[]):
+  def update_documents(self, engine_id, document_type_id, documents=None):
+    if documents is None:
+      documents = []
     return self.conn._put(self.__documents_path(engine_id, document_type_id) + '/bulk_update', data={'documents':documents})
 
   def destroy_document(self, engine_id, document_type_id, document_id):
     return self.conn._delete(self.__document_path(engine_id, document_type_id, document_id))
 
-  def destroy_documents(self, engine_id, document_type_id, document_ids=[]):
+  def destroy_documents(self, engine_id, document_type_id, document_ids=None):
+    if document_ids is None:
+      document_ids = []
     return self.conn._post(self.__documents_path(engine_id, document_type_id) + '/bulk_destroy', data={'documents':document_ids})
 
-  def search(self, engine_id, query, options={}):
+  def search(self, engine_id, query, options=None):
+    if options is None:
+      options = {}
     query_string = {'q': query}
     full_query = dict(query_string, **options)
     return self.conn._get(self.__search_path(engine_id), data=full_query)
 
-  def search_document_type(self, engine_id, document_type_id, query, options={}):
+  def search_document_type(self, engine_id, document_type_id, query, options=None):
+    if options is None:
+      options = {}
     query_string = {'q': query}
     full_query = dict(query_string, **options)
     return self.conn._get(self.__document_type_search_path(engine_id, document_type_id), data=full_query)
 
-  def suggest(self, engine_id, query, options={}):
+  def suggest(self, engine_id, query, options=None):
+    if options is None:
+      options = {}
     query_string = {'q': query}
     full_query = dict(query_string, **options)
     return self.conn._get(self.__suggest_path(engine_id), data=full_query)
 
-  def suggest_document_type(self, engine_id, document_type_id, query, options={}):
+  def suggest_document_type(self, engine_id, document_type_id, query, options=None):
+    if options is None:
+      options = {}
     query_string = {'q': query}
     full_query = dict(query_string, **options)
     return self.conn._get(self.__document_type_suggest_path(engine_id, document_type_id), data=full_query)
@@ -203,23 +227,42 @@ class Connection(object):
     self.__host = host
     self.__base_path = base_path
 
-  def _get(self, path, params={}, data={}):
+  def _get(self, path, params=None, data=None):
+    if params is None:
+      params = {}
+    if data is None:
+      data = {}
     return self._request('GET', path, params=params, data=data)
 
-  def _delete(self, path, params={}, data={}):
+  def _delete(self, path, params=None, data=None):
+    if params is None:
+      params = {}
+    if data is None:
+      data = {}
     return self._request('DELETE', path, params=params, data=data)
 
-  def _post(self, path, params={}, data={}):
+  def _post(self, path, params=None, data=None):
+    if params is None:
+      params = {}
+    if data is None:
+      data = {}
     return self._request('POST', path, params=params, data=data)
 
-  def _put(self, path, params={}, data={}):
+  def _put(self, path, params=None, data=None):
+    if params is None:
+      params = {}
+    if data is None:
+      data = {}
     return self._request('PUT', path, params=params, data=data)
 
-  def _request(self, method, path, params={}, data={}):
-    headers = {}
-    headers['Content-Type'] = 'application/json'
-    headers['X-Swiftype-Client'] = CLIENT_NAME
-    headers['X-Swiftype-Client-Version'] = VERSION
+  def _request(self, method, path, params=None, data=None):
+    if params is None:
+      params = {}
+    if data is None:
+      data = {}
+    headers = {
+      'Content-Type': 'application/json', 'X-Swiftype-Client': CLIENT_NAME, 'X-Swiftype-Client-Version': VERSION
+    }
     if self.__username is not None and self.__password is not None:
       credentials = "%s:%s" % (self.__username, self.__password)
       base64_credentials = base64.encodestring(credentials.encode('utf-8')).decode()
