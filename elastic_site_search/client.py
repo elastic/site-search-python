@@ -211,11 +211,17 @@ class Client(object):
   def __pagination_params(self, page, per_page):
     return dict((k,v) for k,v in {'page': page, 'per_page': per_page}.items() if v is not None)
 
+
 class HttpException(Exception):
     def __init__(self, status, msg):
         self.status = status
         self.msg = msg
         super(HttpException, self).__init__('HTTP %d: %s' % (status, msg))
+
+
+class InvalidResponseFromServer(Exception):
+  """Received non-JSON response from server"""
+
 
 class Connection(object):
 
